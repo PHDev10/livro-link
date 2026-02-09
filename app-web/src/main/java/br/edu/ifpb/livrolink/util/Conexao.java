@@ -12,7 +12,6 @@ public class Conexao {
 
     public static Connection getConnection() throws SQLException {
         Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println(">>> Conectado com sucesso ao PostgreSQL!");
         return conn;
     }
 }

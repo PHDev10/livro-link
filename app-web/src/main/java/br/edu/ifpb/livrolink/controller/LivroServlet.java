@@ -26,7 +26,6 @@ public class LivroServlet extends HttpServlet {
             SessaoDAO sessaoDAO = new SessaoDAO();
             List<Sessao> sessoes = sessaoDAO.listar();
 
-            System.out.println(">>> Sessões encontradas: " + sessoes.size());
             request.setAttribute("sessoes", sessoes);
             request.getRequestDispatcher("/WEB-INF/views/livro-form.jsp").forward(request, response);
 
@@ -56,8 +55,6 @@ public class LivroServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        System.out.println(">>> ENTROU NO doPost DO LIVRO");
-
         Livro livro = new Livro();
 
         String idStr = request.getParameter("codLivro");
@@ -77,10 +74,8 @@ public class LivroServlet extends HttpServlet {
         if (idStr != null && !idStr.isEmpty()) {
             livro.setCodLivro(Integer.parseInt(idStr));
             livroDAO.atualizar(livro);
-            System.out.println(">>> Atualizando livro ID " + idStr);
         } else {
             livroDAO.inserir(livro);
-            System.out.println(">>> Inserindo novo livro");
         }
 
         response.sendRedirect("livros");

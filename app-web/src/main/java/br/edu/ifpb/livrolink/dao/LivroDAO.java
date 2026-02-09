@@ -14,8 +14,6 @@ public class LivroDAO {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
-
-            System.out.println("Inserindo livro: " + livro.getNomeDoLivro());
             statement.setString(1, livro.getNomeDoLivro());
             statement.setString(2,livro.getGeneroDoLivro());
             statement.setString(3, livro.getAutorDoLivro());
@@ -24,7 +22,6 @@ public class LivroDAO {
             statement.setInt(6, livro.getIdSessao());
 
             statement.executeUpdate();
-            System.out.println("Livro inserido com sucesso!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -82,13 +79,9 @@ public class LivroDAO {
         List<Livro> lista = new ArrayList<>();
         String sql = "SELECT * FROM livro";
 
-        System.out.println(">>> Tentando listar livros...");
-
         try (Connection connection = Conexao.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet rs = statement.executeQuery()) {
-
-            System.out.println(">>> Query executada!");
 
             while (rs.next()) {
                 Livro l = new Livro();
@@ -101,14 +94,10 @@ public class LivroDAO {
                 l.setIdSessao(rs.getInt("id_sessao"));
                 l.setIdUsuario((Integer) rs.getObject("id_usuario"));
 
-                System.out.println(">>> Livro lido: " + l.getNomeDoLivro());
                 lista.add(l);
             }
 
-            System.out.println(">>> Total de livros no DAO: " + lista.size());
-
         } catch (SQLException e) {
-            System.out.println("❌ ERRO AO LISTAR LIVROS");
             e.printStackTrace();
         }
 

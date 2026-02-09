@@ -11,7 +11,6 @@ import java.util.List;
 
 public class SessaoDAO {
     public List<Sessao> listar() {
-        System.out.println(">>> ENTROU NO SessaoDAO.listar()");
         List<Sessao> lista = new ArrayList<>();
         String sql = "SELECT id_sessao, generosessao, quantidadelivrosgenero FROM sessao";
 
@@ -25,7 +24,6 @@ public class SessaoDAO {
                 s.setGeneroSessao(rs.getString("generosessao"));
                 s.setQuantidadeDeLivrosGenero(rs.getInt("quantidadelivrosgenero"));
 
-                System.out.println(">>> Sessão lida: " + rs.getString("generosessao"));
                 lista.add(s);
             }
 
