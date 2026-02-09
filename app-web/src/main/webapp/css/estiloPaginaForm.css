@@ -1,0 +1,89 @@
+.navbar {
+    background-color: #009879;
+    padding: 14px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-actions button {
+    background-color: #009879;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #007f66;
+}
+
+.botao-secundario {
+    background-color: #ccc;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.botao-secundario:hover {
+    background-color: #bbb;
+}
