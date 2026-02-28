@@ -28,7 +28,9 @@
             <option value="F">Feminino</option>
         </select>
 
-        <input type="submit" value="Cadastrar">
+        <div class="form-group botao">
+            <button type="submit">Cadastrar</button>
+        </div>
     </form>
 
     <p style="text-align:center;">
