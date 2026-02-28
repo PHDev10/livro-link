@@ -104,7 +104,6 @@ public class LivroDAO {
         return lista;
     }
 
-
     public void excluir(int id) {
         String sql = "DELETE FROM livro WHERE cod_livro=?";
 

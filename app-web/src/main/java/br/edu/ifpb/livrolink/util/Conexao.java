@@ -10,9 +10,15 @@ public class Conexao {
     private static final String USER = "postgres";
     private static final String PASSWORD = "54321";
 
-    public static Connection getConnection() throws SQLException {
-        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Driver PostgreSQL não encontrado!", e);
+        }
+    }
 
-        return conn;
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

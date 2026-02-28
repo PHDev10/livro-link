@@ -56,15 +56,15 @@ public class UsuarioDAO {
     }
 
     public void inserir(Usuario usuario) {
-        String sql = "INSERT INTO usuario (nome, idade, cpf, sexo) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO usuario(nome, idade, cpf, sexo) VALUES (?, ?, ?, ?)";
 
         try (Connection connection = Conexao.getConnection();
-            PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, usuario.getNome());
             statement.setInt(2, usuario.getIdade());
             statement.setString(3, usuario.getCpf());
-            statement.setString(4, String.valueOf(usuario.getSexo()));
+            statement.setString(4, usuario.getSexo());
 
             statement.executeUpdate();
         } catch (SQLException e) {

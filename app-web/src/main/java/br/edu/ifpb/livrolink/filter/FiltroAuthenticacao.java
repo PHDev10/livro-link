@@ -24,6 +24,8 @@ public class FiltroAuthenticacao implements Filter {
         boolean logado = (session != null && session.getAttribute("usuarioLogado") != null);
 
         if (logado) {
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
             chain.doFilter(request, response);
         } else {
             req.setAttribute("erro", "Faça login para ter acesso a essa página.");

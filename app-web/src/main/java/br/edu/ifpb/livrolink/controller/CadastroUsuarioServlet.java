@@ -17,11 +17,12 @@ public class CadastroUsuarioServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         Usuario usuario = new Usuario();
         usuario.setNome(request.getParameter("nome"));
         usuario.setIdade(Integer.parseInt(request.getParameter("idade")));
         usuario.setCpf(request.getParameter("cpf"));
-        usuario.setSexo(String.valueOf(request.getParameter("sexo").charAt(0)));
+        usuario.setSexo(request.getParameter("sexo"));
 
         UsuarioDAO dao = new UsuarioDAO();
         dao.inserir(usuario);

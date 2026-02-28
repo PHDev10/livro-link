@@ -11,7 +11,7 @@
 <div class="container">
     <h2>Criar novo usuário</h2>
 
-    <form action="${pageContext.request.contextPath}/cadastro" method="post">
+    <form action="${pageContext.request.contextPath}/cadastro" method="post" accept-charset="UTF-8">
 
         <label>Nome</label>
         <input type="text" name="nome" required>

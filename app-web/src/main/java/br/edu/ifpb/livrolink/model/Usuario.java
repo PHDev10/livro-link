@@ -5,7 +5,7 @@ public class Usuario  {
     private String nome;
     private int idade;
     private String cpf;
-    private char sexo;
+    private String sexo;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -19,7 +19,7 @@ public class Usuario  {
         return nome;
     }
 
-    public void setNome(String nomme) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -39,7 +39,7 @@ public class Usuario  {
         this.cpf = cpf;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
