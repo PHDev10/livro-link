@@ -10,13 +10,29 @@
 <body>
 
 <div class="navbar">
-    <div class="nav-container">
-        <a href="livros" class="logo">📚 LivroLink</a>
-        <div class="nav-links">
-            <a href="livros">Home</a>
-            <a href="livros?acao=novo">Novo Livro</a>
-            <a href="${pageContext.request.contextPath}/consulta-livros-reservados">Ver Livros Reservados</a>
-            <a href="${pageContext.request.contextPath}/pagina-reserva">Reservar Livro</a>
+    <div class="navbar">
+        <div class="nav-container">
+            <a href="${pageContext.request.contextPath}/livros" class="logo">📚 LivroLink</a>
+
+            <div class="nav-links">
+                <a href="${pageContext.request.contextPath}/livros">Home</a>
+
+                <a href="${pageContext.request.contextPath}/livros?acao=novo">
+                    Novo Livro
+                </a>
+
+                <a href="${pageContext.request.contextPath}/consulta-livros-reservados">
+                    Livros Reservados
+                </a>
+
+                <a href="${pageContext.request.contextPath}/consulta-usuarios-por-livro">
+                    Usuários por Livro
+                </a>
+
+                <a href="${pageContext.request.contextPath}/pagina-reserva">
+                    Reservar Livro
+                </a>
+            </div>
         </div>
     </div>
 </div>

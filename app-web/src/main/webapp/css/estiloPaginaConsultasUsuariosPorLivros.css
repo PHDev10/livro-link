@@ -1,0 +1,121 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #009879;
+    padding: 12px 0;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TÍTULO ===== */
+h2 {
+    text-align: center;
+    margin: 40px 0 25px;
+    color: #1f2937;
+}
+
+/* ===== TABELA ===== */
+.tabela-listagem {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tabela-listagem thead {
+    background-color: #2563eb;
+    color: white;
+}
+
+.tabela-listagem th,
+.tabela-listagem td {
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.tabela-listagem th {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.tabela-listagem tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela-listagem tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.tabela-listagem tbody tr:hover {
+    background-color: #eef2ff;
+}
+
+/* ===== MENSAGEM SEM RESULTADOS ===== */
+p {
+    font-size: 1rem;
+    color: #374151;
+}
+
+/* ===== LINK VOLTAR ===== */
+p a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .tabela-listagem {
+        font-size: 0.85rem;
+    }
+
+    .nav-links a {
+        margin-left: 10px;
+    }
+}
