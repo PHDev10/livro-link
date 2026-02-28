@@ -15,6 +15,8 @@
         <div class="nav-links">
             <a href="livros">Home</a>
             <a href="livros?acao=novo">Novo Livro</a>
+            <a href="${pageContext.request.contextPath}/consulta-livros-reservados">Ver Livros Reservados</a>
+            <a href="${pageContext.request.contextPath}/pagina-reserva">Reservar Livro</a>
         </div>
     </div>
 </div>

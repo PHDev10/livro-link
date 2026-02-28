@@ -9,8 +9,7 @@ CREATE TABLE Usuario (
 	nome VARCHAR(80) NOT NULL,
 	idade INT NOT NULL,
 	cpf VARCHAR(11) UNIQUE NOT NULL,
-	sexo CHAR(1),
-	livrosEmPoss
+	sexo CHAR(1)
 );
 
 CREATE TABLE livro (
@@ -23,7 +22,16 @@ CREATE TABLE livro (
 	id_usuario INT,
 	id_sessao INT,
 
-	CONSTRAINT fk_livro_usuario FOREIGN KEY (id_usuario) REFERENCES livro(cod_livro),
+	CONSTRAINT fk_livro_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
 	CONSTRAINT fk_livro_sessao FOREIGN KEY (id_sessao) REFERENCES sessao(id_sessao)
 );
 
+CREATE TABLE reserva (
+    id_reserva SERIAL PRIMARY KEY,
+    cod_livro INT NOT NULL,
+    id_usuario INT NOT NULL,
+    data_reserva TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_reserva_livro FOREIGN KEY (cod_livro) REFERENCES livro(cod_livro),
+    CONSTRAINT fk_reserva_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
