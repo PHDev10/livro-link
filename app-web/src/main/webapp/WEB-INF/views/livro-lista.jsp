@@ -32,6 +32,14 @@
                 <a href="${pageContext.request.contextPath}/pagina-reserva">
                     Reservar Livro
                 </a>
+
+                <a href="${pageContext.request.contextPath}/livros-por-sessao">
+                    Livros por Sessão
+                </a>
+
+                <a href="${pageContext.request.contextPath}/reservas-por-usuario">
+                    Reservas por Usuário
+                </a>
             </div>
         </div>
     </div>

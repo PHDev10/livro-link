@@ -58,4 +58,27 @@ public class ReservaDAO {
 
         return lista;
     }
+
+    public List<Object[]> listarReservasPorUsuario() {
+        List<Object[]> lista = new ArrayList<>();
+        String sql = "SELECT u.nome, u.cpf, COUNT(r.id_reserva) AS total_reservas FROM usuario u LEFT JOIN reserva r ON u.id_usuario = r.id_usuario GROUP BY u.nome, u.cpf ORDER BY total_reservas DESC";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Object[] linha = new Object[3];
+                linha[0] = rs.getString("nome");
+                linha[1] = rs.getString("cpf");
+                linha[2] = rs.getInt("total_reservas");
+                lista.add(linha);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
 }
