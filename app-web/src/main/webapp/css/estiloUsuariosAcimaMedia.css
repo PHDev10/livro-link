@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.navbar {
+    background-color: #009879;
+    padding: 12px 0;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo:hover {
+    text-decoration: underline;
+}
+
+.nav-links > a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links > a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    margin: 40px 0 25px;
+    color: #1f2937;
+}
+
+.tabela-listagem {
+    width: 60%;
+    max-width: 700px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tabela-listagem thead {
+    background-color: #009879;
+    color: white;
+}
+
+.tabela-listagem th,
+.tabela-listagem td {
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.tabela-listagem tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela-listagem tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.tabela-listagem tbody tr:hover {
+    background-color: #eef2ff;
+}
+
+p {
+    text-align: center;
+    margin-top: 30px;
+    color: #374151;
+}

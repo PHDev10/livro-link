@@ -71,4 +71,33 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
     }
+
+    public List<Object[]> listarUsuariosAcimaMedia() {
+        List<Object[]> lista = new ArrayList<>();
+        String sql = "SELECT u.nome, u.cpf, COUNT(r.id_reserva) AS total_reservas FROM usuario u INNER JOIN reserva r ON u.id_usuario = r.id_usuario GROUP BY u.nome, u.cpf HAVING COUNT(r.id_reserva) > (SELECT AVG(contagem) FROM (SELECT COUNT(id_reserva) AS contagem FROM reserva GROUP BY id_usuario) AS media ORDER BY total_reservas DESC";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            System.out.println(">>> Query executada com sucesso");
+
+            while (rs.next()) {
+                Object[] linha = new Object[3];
+                linha[0] = rs.getString("nome");
+                linha[1] = rs.getString("cpf");
+                linha[2] = rs.getInt("total_reservas");
+                lista.add(linha);
+                System.out.println(">>> Linha encontrada: " + linha[0]);
+            }
+
+            System.out.println(">>> Total de linhas: " + lista.size());
+
+        } catch (SQLException e) {
+            System.out.println(">>> ERRO SQL: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
 }

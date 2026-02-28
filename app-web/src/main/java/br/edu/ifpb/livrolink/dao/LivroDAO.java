@@ -178,4 +178,30 @@ public class LivroDAO {
             e.printStackTrace();
         }
     }
+
+    public List<Object[]> listarLivrosComReservas() {
+        List<Object[]> lista = new ArrayList<>();
+        String sql = "SELECT l.cod_livro, l.nomedolivro, l.autordolivro, l.generodolivro, r.data_reserva, u.nome AS nome_usuario FROM livro l LEFT JOIN reserva r ON l.cod_livro = r.cod_livro LEFT JOIN usuario u ON r.id_usuario = u.id_usuario ORDER BY l.nomedolivro";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Object[] linha = new Object[6];
+                linha[0] = rs.getString("cod_livro");
+                linha[1] = rs.getString("nomedolivro");
+                linha[2] = rs.getString("autordolivro");
+                linha[3] = rs.getString("generodolivro");
+                linha[4] = rs.getTimestamp("data_reserva");
+                linha[5] = rs.getString("nome_usuario");
+                lista.add(linha);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
 }
